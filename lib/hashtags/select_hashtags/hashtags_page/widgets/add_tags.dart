@@ -47,6 +47,7 @@ class _AddTagsState extends State<AddTags> {
                       setState(
                         () {
                           addedTags.add(controller.text);
+                          controller.clear();
                         },
                       );
                     },

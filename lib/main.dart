@@ -1,4 +1,8 @@
-import 'package:hashtags/configure/imports.dart';
+import 'package:hashtags/scr/configure/imports.dart';
+import 'package:hashtags/scr/configure/route.dart';
+import 'package:hashtags/scr/feature/select_hashtags/bloc/selected_items_cubit.dart';
+import 'package:hashtags/scr/feature/select_hashtags/hashtags_page/hashtags_view.dart';
+import 'package:hashtags/scr/feature/show_daft/show_draft.dart';
 
 void main() {
   runApp(const MaterialApp(

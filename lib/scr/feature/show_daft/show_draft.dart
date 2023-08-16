@@ -1,4 +1,11 @@
-import 'package:hashtags/configure/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:hashtags/scr/feature/select_hashtags/bloc/selected_items_cubit.dart';
+import 'package:hashtags/scr/feature/select_hashtags/hashtags_page/widgets/add_tags.dart';
+import 'package:hashtags/scr/feature/select_hashtags/hashtags_page/widgets/body_select_hashtags.dart';
+import 'package:hashtags/scr/feature/select_hashtags/hashtags_page/widgets/trending_tags.dart';
+import 'package:hashtags/scr/feature/show_daft/widget/added_tags.dart';
+import 'package:hashtags/scr/feature/show_daft/widget/back_button.dart';
 
 class ShowDraftPage extends StatefulWidget {
   const ShowDraftPage({
@@ -13,9 +20,6 @@ class _ShowDraftPageState extends State<ShowDraftPage> {
   @override
   void initState() {
     super.initState();
-
-    tagsSelected.clear();
-    trendingTagsSelected.clear();
     BlocProvider.of<SelectedItemsCubit>(context).addSelectedItems(
         tagsStatic[tappedIndex], addedTags, trendingTags[tappedIndexTrending]);
   }
@@ -34,9 +38,12 @@ class _ShowDraftPageState extends State<ShowDraftPage> {
                 const SizedBox(
                   height: 100,
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('your selected'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    'your selected',
+                    style: Theme.of(context).textTheme.titleLarge,
+                  ),
                 ),
                 Wrap(
                   children: List.generate(
@@ -45,24 +52,27 @@ class _ShowDraftPageState extends State<ShowDraftPage> {
                             choice: state.selectedItems[index],
                           )),
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('Tags added'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Tags added',
+                      style: Theme.of(context).textTheme.titleLarge),
                 ),
                 Row(
                   children: [
                     Wrap(
                       children: List.generate(
-                          state.addedChoose.length,
-                          (index) => HashTagsAdded(
-                                choice: state.addedChoose[index],
-                              )),
+                        state.addedChoose.length,
+                        (index) => HashTagsAdded(
+                          choice: state.addedChoose[index],
+                        ),
+                      ),
                     ),
                   ],
                 ),
-                const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('Trending Tags'),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Trending Tags',
+                      style: Theme.of(context).textTheme.titleLarge),
                 ),
                 Wrap(
                   children: List.generate(

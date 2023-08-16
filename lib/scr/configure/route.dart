@@ -1,4 +1,6 @@
-import 'package:hashtags/configure/imports.dart';
+import 'package:hashtags/scr/feature/select_hashtags/hashtags_page/hashtags_view.dart';
+import 'package:hashtags/scr/feature/show_daft/show_draft.dart';
+import 'imports.dart';
 
 const String homePage = 'lib/pages/hashtags/hashtags_page/hashtags_view.dart';
 const String showDraft =

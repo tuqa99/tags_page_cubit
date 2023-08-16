@@ -1,4 +1,5 @@
-import 'package:hashtags/configure/imports.dart';
+import 'package:hashtags/scr/configure/colors.dart';
+import 'package:hashtags/scr/configure/imports.dart';
 
 class BackButton11 extends StatefulWidget {
   const BackButton11({super.key});

@@ -1,4 +1,6 @@
-import 'package:hashtags/configure/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:hashtags/scr/configure/colors.dart';
+import 'package:hashtags/scr/feature/select_hashtags/hashtags_page/widgets/trending_tags.dart';
 
 class ButtonShowDraft extends StatefulWidget {
   const ButtonShowDraft({super.key});

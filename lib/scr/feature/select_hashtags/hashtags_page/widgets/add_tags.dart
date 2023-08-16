@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hashtags/configure/colors.dart';
+import 'package:flutter/services.dart';
+import 'package:hashtags/scr/configure/colors.dart';
 
 List<String> addedTags = [];
 
@@ -12,7 +13,7 @@ class AddTags extends StatefulWidget {
 
 class _AddTagsState extends State<AddTags> {
   TextEditingController controller = TextEditingController();
-
+  String controllerText = '';
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -36,6 +37,9 @@ class _AddTagsState extends State<AddTags> {
           child: SizedBox(
             width: 350,
             child: TextField(
+              inputFormatters: [
+                LengthLimitingTextInputFormatter(10),
+              ],
               controller: controller,
               maxLines: 5,
               minLines: 1,
@@ -46,8 +50,11 @@ class _AddTagsState extends State<AddTags> {
                     onPressed: () {
                       setState(
                         () {
-                          addedTags.add(controller.text);
-                          controller.clear();
+                          if (controller.text.isNotEmpty) {
+                            addedTags.add(controller.text);
+                            controller.clear();
+                            controller.text = '';
+                          } else {}
                         },
                       );
                     },
@@ -70,14 +77,14 @@ class _AddTagsState extends State<AddTags> {
               children: List.generate(
                 addedTags.length,
                 (index) => Container(
+                  height: 50,
+                  width: 140,
                   margin:
                       const EdgeInsets.symmetric(horizontal: 10.0, vertical: 7),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     color: grey,
                   ),
-                  height: MediaQuery.of(context).size.height * 0.05,
-                  width: MediaQuery.of(context).size.width * 0.34,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

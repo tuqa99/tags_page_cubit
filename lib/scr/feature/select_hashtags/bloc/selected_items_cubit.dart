@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:hashtags/configure/imports.dart';
 part 'selected_items_state.dart';
 
 class SelectedItemsCubit extends Cubit<SelectedItemsState> {

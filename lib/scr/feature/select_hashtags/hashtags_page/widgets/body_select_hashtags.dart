@@ -1,4 +1,7 @@
-import 'package:hashtags/configure/imports.dart';
+import 'package:flutter/material.dart';
+import 'package:hashtags/scr/configure/colors.dart';
+import 'package:hashtags/scr/configure/asstes/icons.dart';
+import 'package:hashtags/scr/configure/imports.dart';
 
 List tagsSelected = [];
 List tagsStatic = ['Personal', 'Wedding', 'Business'];
@@ -51,21 +54,23 @@ class _BodySelectHashtagsState extends State<BodySelectHashtags> {
                   ),
                   height: MediaQuery.of(context).size.height * 0.05,
                   width: MediaQuery.of(context).size.height * 0.19,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      SvgPicture.asset(
-                        iconsPath[index],
-                        color: Colors.black,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        tagsStatic[index],
-                        style: Theme.of(context).textTheme.titleSmall,
-                      )
-                    ],
+                  child: Center(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          iconsPath[index],
+                          color: Colors.black,
+                        ),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          tagsStatic[index],
+                          style: Theme.of(context).textTheme.titleSmall,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),

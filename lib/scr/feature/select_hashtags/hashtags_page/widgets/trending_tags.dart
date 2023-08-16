@@ -1,4 +1,5 @@
-import '../../../../configure/imports.dart';
+import 'package:hashtags/scr/configure/colors.dart';
+import 'package:hashtags/scr/configure/imports.dart';
 
 List<String> trendingTagsSelected = [];
 List<String> trendingTags = [

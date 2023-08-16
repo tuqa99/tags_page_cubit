@@ -1,4 +1,6 @@
-import 'package:hashtags/configure/imports.dart';
+// ignore: must_be_immutable
+import 'package:hashtags/scr/configure/colors.dart';
+import 'package:hashtags/scr/configure/imports.dart';
 
 // ignore: must_be_immutable
 class HashTagsAdded extends StatelessWidget {
